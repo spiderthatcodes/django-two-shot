@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load my_filters %}
+{% block title %}
+Category List
+{% endblock title %}
+{% block content %}
+<main>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Number of receipts</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cat in categories %}
+                <tr>
+                    <td>{{cat.name}}</td>
+                    <td>{{receipts|cat_total:cat}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock content %}
