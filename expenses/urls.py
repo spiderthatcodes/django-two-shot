@@ -26,5 +26,6 @@ def redirect_to_list(request):
 urlpatterns = [
     path('', redirect_to_list, name="home_page"),
     path("admin/", admin.site.urls),
-    path("receipts/", include("receipts.urls"))
+    path("receipts/", include("receipts.urls")),
+    path("accounts/", include("accounts.urls")),
 ]
