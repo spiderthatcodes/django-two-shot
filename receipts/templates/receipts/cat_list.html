@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load my_filters %}
 {% block title %}
 Category List
 {% endblock title %}
@@ -17,7 +16,7 @@ Category List
                 {% for cat in categories %}
                 <tr>
                     <td>{{cat.name}}</td>
-                    <td>{{receipts|cat_total:cat}}</td>
+                    <td>{{cat.owner.receipts.all|length}}</td>
                 </tr>
                 {% endfor %}
             </tbody>

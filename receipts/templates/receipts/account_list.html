@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load my_filters %}
 {% block title %}
 Account List
 {% endblock title %}
@@ -19,7 +18,7 @@ Account List
                 <tr>
                     <td>{{account.name}}</td>
                     <td>{{account.number}}</td>
-                    <td>{{receipts|account_total:account}}</td>
+                    <td>{{account.owner.receipts.all|length}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
