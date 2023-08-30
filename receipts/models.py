@@ -10,6 +10,9 @@ class ExpenseCategory(models.Model):
         on_delete=models.CASCADE
     )
 
+    def __str__(self):
+        return self.name
+
 
 class Account(models.Model):
     name = models.CharField(max_length=100)
@@ -19,6 +22,9 @@ class Account(models.Model):
         related_name='accounts',
         on_delete=models.CASCADE
     )
+
+    def __str__(self):
+        return self.name
 
 
 class Receipt(models.Model):
@@ -41,3 +47,6 @@ class Receipt(models.Model):
         related_name='receipts',
         on_delete=models.CASCADE
     )
+
+    def __str__(self):
+        return self.vendor
